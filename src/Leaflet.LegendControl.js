@@ -3,6 +3,15 @@ L.Control.Legend = L.Control.extend({
     _headerClassName: this._className + '-header',
     _bodyClassName: this._className + '-body',
 
+    _defaultParams: {
+        wms: {
+            request: 'GetLegendGraphic',
+            format: 'image/png',
+            legend_options: 'forceLabels:on',
+            version: '1.3.0'
+        }
+    },
+
     initialize: function (options) {
         L.Util.setOptions(this, options);
     },
@@ -31,22 +40,13 @@ L.Control.Legend = L.Control.extend({
         this._legends.innerHTML = "";
         for (var i=0; i < this._wmsLayers.length; i++) {
             var layers = this._wmsLayers[i].options["layers"].split(",");
-            var baseurl = this._wmsLayers[i]._url;
+            var baseUrl = this._wmsLayers[i]._url;
             for (var j=0; j < layers.length; j++) {
-                var legendimg = L.DomUtil.create('img', 'leaflet-wms-legend', this._legends);
-                var legendUrlParams = {
-                    'REQUEST': 'GetLegendGraphic',
-                    'FORMAT': 'image/png',
-                    'LEGEND_OPTIONS': 'forceLabels:on',
-                    'LAYER': layers[j]
-                }
-                url = baseurl
-                url += "?REQUEST=GetLegendGraphic";
-                url += "&FORMAT=image/png";
-                url += "&LEGEND_OPTIONS=forceLabels:on";
-                url += "&LAYER=" + layers[j];
-                url += "&VERSION=1.1.1"
-                legendimg.src = url;
+                var legendImg = L.DomUtil.create('img', 'leaflet-wms-legend', this._legends);
+                var params = this._defaultParams.wms;
+                params.layer = layers[j]
+                var url = baseUrl + L.Util.getParamString(params);
+                legendImg.src = url;
                 L.DomUtil.create('br', '', this._legends);
             }
         }
