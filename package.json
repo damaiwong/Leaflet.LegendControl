@@ -1,0 +1,40 @@
+{
+  "name": "leaflet.legendcontrol",
+  "version": "0.0.1",
+  "description": "A control for Leaflet that displays static or dynamic legends for individual layers",
+  "main": "dist/Leaflet.LegendControl.js",
+  "dependencies": {
+    "leaflet": "^1.0.0-beta.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-uglify": "^1.4.1",
+    "lodash": "~3.10.1",
+    "browserify": "~12.0.1",
+    "gulp-sourcemaps": "~1.6.0",
+    "vinyl-source-stream": "~1.1.0",
+    "vinyl-buffer": "~1.0.0",
+    "gulp-util": "~3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msiadak/Leaflet.LegendControl.git"
+  },
+  "keywords": [
+    "leaflet",
+    "legend",
+    "control",
+    "plugin",
+    "wms"
+  ],
+  "author": "Michael Siadak",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/msiadak/Leaflet.LegendControl/issues"
+  },
+  "homepage": "https://github.com/msiadak/Leaflet.LegendControl#readme"
+}
