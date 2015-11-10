@@ -1,0 +1,19 @@
+.leaflet-legend-control {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+.leaflet-legend-control-header {
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.leaflet-legend-control-legends {
+    min-width: 10px;
+    max-width: auto;
+    min-height: 10px;
+    max-height: auto;
+    padding: 2px;
+}

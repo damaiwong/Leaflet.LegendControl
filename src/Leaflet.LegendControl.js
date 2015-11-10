@@ -38,13 +38,14 @@ L.Control.Legend = L.Control.extend({
                     'REQUEST': 'GetLegendGraphic',
                     'FORMAT': 'image/png',
                     'LEGEND_OPTIONS': 'forceLabels:on',
-                    'LAYER', layers[j]
+                    'LAYER': layers[j]
                 }
                 url = baseurl
                 url += "?REQUEST=GetLegendGraphic";
                 url += "&FORMAT=image/png";
                 url += "&LEGEND_OPTIONS=forceLabels:on";
                 url += "&LAYER=" + layers[j];
+                url += "&VERSION=1.1.1"
                 legendimg.src = url;
                 L.DomUtil.create('br', '', this._legends);
             }
@@ -64,7 +65,7 @@ L.Control.Legend = L.Control.extend({
             }
         }, this);
     },
-}
+});
 
 L.control.legend = function (options) {
   return new L.Control.Legend(options);
