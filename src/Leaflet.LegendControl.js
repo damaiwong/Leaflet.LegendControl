@@ -65,3 +65,7 @@ L.Control.Legend = L.Control.extend({
         }, this);
     },
 }
+
+L.control.legend = function (options) {
+  return new L.Control.Legend(options);
+};

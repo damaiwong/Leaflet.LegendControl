@@ -1,0 +1,33 @@
+<?doctype html>
+<html>
+<head>
+    <title>Leaflet.LegendControl - WMS Legend Example</title>
+    <link rel="stylesheet" href="../node_modules/leaflet/dist/Leaflet.css">
+    <style>
+        html, body, #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script src="../node_modules/leaflet/dist/Leaflet.js"></script>
+<script src="../src/Leaflet.LegendControl.js"></script>
+<script type="text/javascript">
+var map = L.map('map', {
+    center: [],
+    zoom: 15,
+});
+
+var nwiWms = L.tileLayer.wms('http://107.20.228.18/ArcGIS/services/Wetlands/MapServer/WMSServer', {
+    layers: '1',
+    format: 'image/png',
+    transparent: true,
+    attribution: 'U.S. Fish and Wildlife Service, <a href="mailto:wetlands_team@fws.gov">National Standards and Support Team</a>',
+}).addTo(map);
+
+var legendControl = L.control.legend().addTo(map);
+
+</script>
+</body>
+</html>
